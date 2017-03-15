@@ -12,7 +12,7 @@ class GeoTrellisReader(object):
 
     @property
     def path(self):
-        return self.uri
+        return self.uri[13:]
 
 
     def index(self, *args, **kwargs):
@@ -24,7 +24,7 @@ class GeoTrellisReader(object):
     # Dataset level API
     @property
     def count(self):
-        pass
+        return 1
 
     @property
     def height(self):
@@ -44,11 +44,11 @@ class GeoTrellisReader(object):
     # Band level API
     @validate_index
     def get_band_min(self, index, **kwargs):
-        pass
+        return -1.0
 
     @validate_index
     def get_band_max(self, index, **kwargs):
-        pass
+        return 1.0
 
     @validate_index
     def get_band_mean(self, index, **kwargs):
